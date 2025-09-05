@@ -18,6 +18,16 @@ def main():
     def load_data():
         data=pd.read_csv("creditcard.csv")
         return data
+
+    file=st.file_uploader("Charger un fichier csv" ,type=["csv"])
+    if file is not None:
+        df=load_data(file)
+        df_sample=df.sample(5)
+        if st.sidebar.checkbox("Afficher les Données brutes", False):
+            st.subheader("Echantillon jeu de donnée creditcard")
+            st.write(df_sample)
+        #st.dataframe(data.head())#Affiche le dataframe du fichier telecharger
+
     
     #Affichage des données
     df=load_data()
