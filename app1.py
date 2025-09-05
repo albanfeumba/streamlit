@@ -15,8 +15,8 @@ def main():
     
     #fonction d'importation des données
     @st.cache_data(persist=True)#Permet d'eviter que l'application soit lente
-    def load_data():
-        data=pd.read_csv("creditcard.csv")
+    def load_data(file):
+        data=pd.read_csv(file)
         return data
 
     file=st.file_uploader("Charger un fichier csv" ,type=["csv"])
@@ -30,11 +30,11 @@ def main():
 
     
     #Affichage des données
-    df=load_data()
-    df_sample=df.sample(5)
-    if st.sidebar.checkbox("Afficher les Données brutes", False):
-        st.subheader("Echantillon jeu de donnée creditcard")
-        st.write(df_sample)
+#    df=load_data()
+ #   df_sample=df.sample(5)
+  #  if st.sidebar.checkbox("Afficher les Données brutes", False):
+   #     st.subheader("Echantillon jeu de donnée creditcard")
+    #    st.write(df_sample)
     
     seed=123
     #Train/Test split
