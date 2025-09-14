@@ -11,7 +11,6 @@ from reportlab.lib import colors
 import tempfile
 import base64
 from typing import List, Dict, Any, Tuple
-from openai import OpenAI
 
 # Libellés de navigation (évite les divergences de chaînes)
 MENU_PAGE_GENERATE = "Générer des exercices"
